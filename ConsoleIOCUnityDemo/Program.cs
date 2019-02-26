@@ -19,9 +19,16 @@ namespace ConsoleIOCUnityDemo
             var android = UnityIocHelper.Instance.GetService<IPhone>("TestPhone");
             android.Call();
 
- 
+
+            //single
+            var android1 = UnityIocHelper.Instance.GetService<IPhone>();
+            android1.Call();
+
+            var android2 = UnityIocHelper.Instance.GetService<IPhone>();
+            android2.Call();
 
 
+            //aop
             var androidAOP = UnityIocHelper.AOPInstance.GetService<IPhone>();
             androidAOP.Call();
         }
